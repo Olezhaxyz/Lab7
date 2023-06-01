@@ -11,17 +11,21 @@ public class Calculate {
         num2 = reader.nextDouble();
         System.out.print("\nВыберите действие (+, -, *, /): ");
         op = reader.next().charAt(0);
-        switch (op) {
-            case '+' -> ans = num1 + num2;
-            case '-' -> ans = num1 - num2;
-            case '*' -> ans = num1 * num2;
-            case '/' -> ans = num1 / num2;
-            default -> {
-                System.out.printf("Ошибка! Неправльный оператор");
-                return;
+
+        try {
+            switch (op) {
+                case '+' -> ans = num1 + num2;
+                case '-' -> ans = num1 - num2;
+                case '*' -> ans = num1 * num2;
+                case '/' -> ans = num1 / num2;
+                default -> {
+                    throw new IllegalArgumentException("Ошибка! Неправильный оператор");
+                }
             }
+            System.out.print("\nРезультат:\n");
+            System.out.printf(num1 + " " + op + " " + num2 + " = " + ans);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Ошибка: " + e.getMessage());
         }
-        System.out.print("\nРезультат:\n");
-        System.out.printf(num1 + " " + op + " " + num2 + " = " + ans);
     }
 }
