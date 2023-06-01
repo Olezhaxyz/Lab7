@@ -11,6 +11,8 @@ public class Calculate {
         num2 = reader.nextDouble();
         System.out.print("\nВыберите действие (+, -, *, /): ");
         op = reader.next().charAt(0);
+
+        try {
         switch (op) {
             case '+' -> ans = num1 + num2;
             case '-' -> ans = num1 - num2;
@@ -23,5 +25,8 @@ public class Calculate {
         }
         System.out.print("\nРезультат:\n");
         System.out.printf(num1 + " " + op + " " + num2 + " = " + ans);
+        } catch (Exception e) {
+            System.out.println("Неизвестная ошибка: " + e.getMessage());
+        }
     }
 }
