@@ -5,6 +5,7 @@ public class Calculate {
         double num2;
         double ans;
         char op;
+        String choice;
         Scanner reader = new Scanner(System.in);
         System.out.print("Добро пожаловать в Калькулятор");
         System.out.print("Напишите 2 числа: ");
@@ -12,7 +13,7 @@ public class Calculate {
         num2 = reader.nextDouble();
         System.out.print("\nВыберите действие (+, -, *, /): ");
         op = reader.next().charAt(0);
-
+        do{
         try {
             switch (op) {
                 case '+' -> ans = num1 + num2;
@@ -25,8 +26,12 @@ public class Calculate {
             }
             System.out.print("\nРезультат:\n");
             System.out.printf(num1 + " " + op + " " + num2 + " = " + ans);
-        } catch (IllegalArgumentException e) {
+            System.out.print("\nЗавершить работу?(Y/N): ");
+            choice = reader.next();
+            } catch (IllegalArgumentException e) {
             System.out.println("Ошибка: " + e.getMessage());
+            choice = "N";
         }
+        } while (!choice.equalsIgnoreCase("Y"));
     }
 }
