@@ -9,7 +9,7 @@ public class Calculate {
         System.out.print("Напишите 2 числа: ");
         num1 = reader.nextDouble();
         num2 = reader.nextDouble();
-        System.out.print("\nВыберите действие (+, -, *, /): ");
+        System.out.print("\nВыберите оператор (+, -, *, /): ");
         op = reader.next().charAt(0);
 
         try {
