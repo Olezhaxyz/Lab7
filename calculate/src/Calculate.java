@@ -26,6 +26,8 @@ public class Calculate {
             System.out.printf(num1 + " " + op + " " + num2 + " = " + ans);
         } catch (IllegalArgumentException e) {
             System.out.println("Ошибка: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Неизвестная ошибка: " + e.getMessage());
         }
     }
 }
