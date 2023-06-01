@@ -6,6 +6,7 @@ public class Calculate {
         double ans;
         char op;
         Scanner reader = new Scanner(System.in);
+        System.out.print("Добро пожаловать в Калькулятор");
         System.out.print("Напишите 2 числа: ");
         num1 = reader.nextDouble();
         num2 = reader.nextDouble();
